@@ -1,11 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu portifolio</title>
+    <title>Portfólio | Desenvolvedor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+       
+        :root {
+            --bg-color: #121212;
+            --card-bg: #181818;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --accent: #1db954; 
+            --accent-hover: #1ed760;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+      
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+       
+        header {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-weight: 700; font-size: 1.5rem; }
+        .social-links a { margin-left: 15px; font-size: 1.2rem; color: var(--text-secondary); }
+        .social-links a:hover { color: var(--accent); }
+
+      
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: black;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn:hover { background-color: var(--accent-hover); transform: scale(1.05); }
+
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+        }
+        
+        .skills-grid {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        .badge {
+            background-color: var(--card-bg);
+            padding: 8px 16px;
+            border-radius: 5px;
+            border: 1px solid #333;
+        }
+        .badge.highlight {
+            border-color: var(--accent);
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+       
+        .projects { padding-bottom: 100px; }
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column; /* Mobile first */
+            border: 1px solid #282828;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        
+        .project-content { padding: 30px; flex: 1; }
+        .project-title { font-size: 1.5rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;}
+        .project-desc { color: var(--text-secondary); margin-bottom: 20px; }
+        .project-links a {
+            margin-right: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .project-links a:hover { text-decoration: underline; color: var(--accent); }
+
+      
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 768px) {
+            .project-card { flex-direction: row; }
+            .project-content { width: 100%; }
+        }
+    </style>
 </head>
 <body>
-    portifolio
+
+    <div class="container">
+        <header>
+            <div class="logo">SeuNome.dev</div>
+            <div class="social-links">
+                <a href="https://github.com/GabrielMichelini/Exerc-cios-APPS-" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:seuemail@email.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Olá, eu sou o [Seu Nome]</h1>
+            <p>Desenvolvedor Front-End apaixonado por criar interfaces modernas e responsivas.</p>
+            <a href="https://github.com/GabrielMichelini/Exerc-cios-APPS-" class="btn" target="_blank">
+                <i class="fab fa-github"></i> Ver meu GitHub
+            </a>
+        </section>
+
+        <section>
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">Git/GitHub</span>
+                <span class="badge">React </span>
+                <span class="badge highlight"><i class="fas fa-globe"></i> Inglês C1 (Avançado)</span>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2 class="section-title">Projetos</h2>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3 class="project-title">
+                        <i class="fab fa-spotify" style="color: var(--accent);"></i> 
+                        Spotify Clone
+                    </h3>
+                    <p class="project-desc">
+                        Uma recriação da interface web do Spotify. Desenvolvido para praticar layout responsivo, manipulação do DOM e reprodução de áudio. O projeto simula a experiência de usuário do aplicativo original.
+                    </p>
+                    <div class="skills-grid" style="margin-bottom: 20px; gap: 8px;">
+                        <span class="badge" style="font-size: 0.8rem;">HTML</span>
+                        <span class="badge" style="font-size: 0.8rem;">CSS Flexbox/Grid</span>
+                        <span class="badge" style="font-size: 0.8rem;">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="LINK-DO-REPOSITORIO-SPOTIFY" target="_blank"><i class="fab fa-github"></i> Ver Código</a>
+                        <a href="LINK-DO-DEPLOY-SE-TIVER" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3 class="project-title">Landing Page Exemplo</h3>
+                    <p class="project-desc">
+                        Uma landing page focada em conversão, utilizando design moderno e boas práticas de SEO.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Ver Código</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Desenvolvido por [Seu Nome] - 2024</p>
+        </footer>
+    </div>
+
 </body>
 </html>
